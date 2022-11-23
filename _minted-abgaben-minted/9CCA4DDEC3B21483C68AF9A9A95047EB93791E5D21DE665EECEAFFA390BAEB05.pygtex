@@ -1,0 +1,56 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kr}{import} \PYG{n+nn}{Distribution.Simple.Flag} \PYG{p}{(}\PYG{k+kt}{Flag}\PYG{p}{)}
+\PYG{c+c1}{\PYGZhy{}\PYGZhy{} Datentyp für rationale Zahlen repräsentiert durch zwei Ganzzahlen für Zähler und Nenner}
+\PYG{k+kr}{data} \PYG{k+kt}{Ratio} \PYG{o+ow}{=} \PYG{k+kt}{MkRatio} \PYG{k+kt}{Integer} \PYG{k+kt}{Integer}
+
+
+\PYG{c+c1}{\PYGZhy{}\PYGZhy{} Gleichheit für rationale Zahlen}
+\PYG{k+kr}{instance} \PYG{k+kt}{Eq} \PYG{k+kt}{Ratio} \PYG{k+kr}{where}
+  \PYG{p}{(}\PYG{k+kt}{MkRatio} \PYG{n}{nom1} \PYG{n}{den1}\PYG{p}{)} \PYG{o}{==} \PYG{p}{(}\PYG{k+kt}{MkRatio} \PYG{n}{nom2} \PYG{n}{den2}\PYG{p}{)} \PYG{o+ow}{=} \PYG{p}{(}\PYG{n}{nom1} \PYG{o}{*} \PYG{n}{den2} \PYG{o}{==} \PYG{n}{nom2} \PYG{o}{*} \PYG{n}{den1}\PYG{p}{)}
+
+\PYG{c+c1}{\PYGZhy{}\PYGZhy{} Ordnung für rationale Zahlen}
+\PYG{k+kr}{instance} \PYG{k+kt}{Ord} \PYG{k+kt}{Ratio} \PYG{k+kr}{where}
+  \PYG{p}{(}\PYG{k+kt}{MkRatio} \PYG{n}{nom1} \PYG{n}{den1}\PYG{p}{)} \PYG{o}{\PYGZlt{}=} \PYG{p}{(}\PYG{k+kt}{MkRatio} \PYG{n}{nom2} \PYG{n}{den2}\PYG{p}{)} \PYG{o+ow}{=}
+    \PYG{k+kr}{if} \PYG{p}{((}\PYG{n}{signum} \PYG{n}{den1}\PYG{p}{)} \PYG{o}{*} \PYG{p}{(}\PYG{n}{signum} \PYG{n}{den2}\PYG{p}{)} \PYG{o}{==} \PYG{l+m+mi}{1}\PYG{p}{)}
+      \PYG{k+kr}{then} \PYG{p}{(}\PYG{n}{nom1} \PYG{o}{*} \PYG{n}{den2} \PYG{o}{\PYGZlt{}=} \PYG{n}{nom2} \PYG{o}{*} \PYG{n}{den1}\PYG{p}{)}
+      \PYG{k+kr}{else} \PYG{p}{(}\PYG{n}{nom2} \PYG{o}{*} \PYG{n}{den1} \PYG{o}{\PYGZlt{}=} \PYG{n}{nom1} \PYG{o}{*} \PYG{n}{den2}\PYG{p}{)}
+
+\PYG{c+c1}{\PYGZhy{}\PYGZhy{} Rechenoperationen für rationale Zahlen inklusive Addition, Multiplikation, Negierung, Betragsfunktion, Vorzeichenfunktion und Konvertierung von Integer}
+\PYG{k+kr}{instance} \PYG{k+kt}{Num} \PYG{k+kt}{Ratio} \PYG{k+kr}{where}
+  \PYG{p}{(}\PYG{o}{+}\PYG{p}{)} \PYG{p}{(}\PYG{k+kt}{MkRatio} \PYG{n}{nom1} \PYG{n}{den1}\PYG{p}{)} \PYG{p}{(}\PYG{k+kt}{MkRatio} \PYG{n}{nom2} \PYG{n}{den2}\PYG{p}{)} \PYG{o+ow}{=} \PYG{p}{(}\PYG{k+kt}{MkRatio} \PYG{p}{(}\PYG{n}{nom1} \PYG{o}{*} \PYG{n}{den2} \PYG{o}{+} \PYG{n}{nom2} \PYG{o}{*} \PYG{n}{den1}\PYG{p}{)} \PYG{p}{(}\PYG{n}{den1} \PYG{o}{*} \PYG{n}{den2}\PYG{p}{))}
+  \PYG{p}{(}\PYG{o}{*}\PYG{p}{)} \PYG{p}{(}\PYG{k+kt}{MkRatio} \PYG{n}{nom1} \PYG{n}{den1}\PYG{p}{)} \PYG{p}{(}\PYG{k+kt}{MkRatio} \PYG{n}{nom2} \PYG{n}{den2}\PYG{p}{)} \PYG{o+ow}{=} \PYG{p}{(}\PYG{k+kt}{MkRatio} \PYG{p}{(}\PYG{n}{nom1} \PYG{o}{*} \PYG{n}{nom2}\PYG{p}{)} \PYG{p}{(}\PYG{n}{den1} \PYG{o}{*} \PYG{n}{den2}\PYG{p}{))}
+  \PYG{n}{negate} \PYG{p}{(}\PYG{k+kt}{MkRatio} \PYG{n}{nom} \PYG{n}{den}\PYG{p}{)} \PYG{o+ow}{=} \PYG{p}{(}\PYG{k+kt}{MkRatio} \PYG{p}{(}\PYG{o}{\PYGZhy{}} \PYG{n}{nom}\PYG{p}{)} \PYG{n}{den}\PYG{p}{)}
+  \PYG{n}{abs} \PYG{p}{(}\PYG{k+kt}{MkRatio} \PYG{n}{nom} \PYG{n}{den}\PYG{p}{)} \PYG{o+ow}{=} \PYG{p}{(}\PYG{k+kt}{MkRatio} \PYG{p}{(}\PYG{n}{abs} \PYG{n}{nom}\PYG{p}{)} \PYG{p}{(}\PYG{n}{abs} \PYG{n}{den}\PYG{p}{))}
+  \PYG{n}{signum} \PYG{p}{(}\PYG{k+kt}{MkRatio} \PYG{n}{nom} \PYG{n}{den}\PYG{p}{)} \PYG{o+ow}{=} \PYG{p}{(}\PYG{k+kt}{MkRatio} \PYG{p}{((}\PYG{n}{signum} \PYG{n}{nom}\PYG{p}{)} \PYG{o}{*} \PYG{p}{(}\PYG{n}{signum} \PYG{n}{den}\PYG{p}{))} \PYG{l+m+mi}{1}\PYG{p}{)}
+  \PYG{n}{fromInteger} \PYG{n}{i} \PYG{o+ow}{=} \PYG{p}{(}\PYG{k+kt}{MkRatio} \PYG{n}{i} \PYG{l+m+mi}{1}\PYG{p}{)}
+
+
+
+\PYG{c+c1}{\PYGZhy{}\PYGZhy{} Funktion zum Anzeigen von rationalen Zahlen}
+\PYG{c+c1}{\PYGZhy{}\PYGZhy{} Die Notation wird später in der Vorlesung erläutert}
+\PYG{k+kr}{instance} \PYG{k+kt}{Show} \PYG{k+kt}{Ratio} \PYG{k+kr}{where}
+  \PYG{n}{show} \PYG{p}{(}\PYG{k+kt}{MkRatio} \PYG{n}{nom} \PYG{n}{den}\PYG{p}{)} \PYG{o+ow}{=} \PYG{p}{(}\PYG{n}{show} \PYG{n}{nom}\PYG{p}{)} \PYG{o}{++} \PYG{l+s}{\PYGZdq{}/\PYGZdq{}} \PYG{o}{++} \PYG{p}{(}\PYG{n}{show} \PYG{n}{den}\PYG{p}{)}
+
+\PYG{n+nf}{ggT} \PYG{o+ow}{::} \PYG{k+kt}{Integer} \PYG{o+ow}{\PYGZhy{}\PYGZgt{}} \PYG{k+kt}{Integer} \PYG{o+ow}{\PYGZhy{}\PYGZgt{}} \PYG{k+kt}{Integer}
+\PYG{n+nf}{ggT} \PYG{n}{a} \PYG{n}{b} \PYG{o+ow}{=} \PYG{k+kr}{if} \PYG{n}{b} \PYG{o}{==} \PYG{l+m+mi}{0} \PYG{k+kr}{then} \PYG{n}{a}
+    \PYG{k+kr}{else} \PYG{n}{ggT} \PYG{n}{b} \PYG{p}{(}\PYG{n}{mod} \PYG{n}{a} \PYG{n}{b}\PYG{p}{)}
+
+\PYG{n+nf}{myRatio} \PYG{o+ow}{::} \PYG{k+kt}{Ratio}
+\PYG{n+nf}{myRatio} \PYG{o+ow}{=} \PYG{k+kt}{MkRatio} \PYG{l+m+mi}{2} \PYG{l+m+mi}{3}
+
+\PYG{n+nf}{reduceFraction} \PYG{o+ow}{::} \PYG{k+kt}{Ratio} \PYG{o+ow}{\PYGZhy{}\PYGZgt{}} \PYG{k+kt}{Ratio}
+\PYG{n+nf}{reduceFraction} \PYG{p}{(}\PYG{k+kt}{MkRatio} \PYG{n}{nom} \PYG{n}{den}\PYG{p}{)} \PYG{o+ow}{=} \PYG{k+kt}{MkRatio} \PYG{p}{(}\PYG{n}{div} \PYG{n}{nom} \PYG{p}{(}\PYG{n}{ggT} \PYG{n}{nom} \PYG{n}{den}\PYG{p}{))} \PYG{p}{(}\PYG{n}{div} \PYG{n}{den} \PYG{p}{(}\PYG{n}{ggT} \PYG{n}{nom} \PYG{n}{den}\PYG{p}{))}
+
+\PYG{n+nf}{fromRatio} \PYG{o+ow}{::} \PYG{k+kt}{Ratio} \PYG{o+ow}{\PYGZhy{}\PYGZgt{}} \PYG{k+kt}{Float}
+\PYG{n+nf}{fromRatio} \PYG{p}{(}\PYG{k+kt}{MkRatio} \PYG{n}{nom} \PYG{n}{den}\PYG{p}{)} \PYG{o+ow}{=} \PYG{n}{roundFive} \PYG{p}{(}\PYG{n}{fromIntegral} \PYG{n}{nom} \PYG{o}{/} \PYG{n}{fromIntegral} \PYG{n}{den}\PYG{p}{)}
+
+\PYG{n+nf}{roundFive} \PYG{o+ow}{::} \PYG{k+kt}{Float} \PYG{o+ow}{\PYGZhy{}\PYGZgt{}} \PYG{k+kt}{Float}
+\PYG{n+nf}{roundFive} \PYG{n}{f} \PYG{o+ow}{=} \PYG{n}{fromIntegral}\PYG{p}{(}\PYG{n}{round} \PYG{p}{(}\PYG{n}{f}\PYG{o}{*}\PYG{l+m+mi}{10}\PYG{o}{\PYGZca{}}\PYG{l+m+mi}{5}\PYG{p}{))}\PYG{o}{/}\PYG{p}{(}\PYG{l+m+mi}{10}\PYG{o}{\PYGZca{}}\PYG{l+m+mi}{5}\PYG{p}{)}
+
+\PYG{n+nf}{decimalPlace} \PYG{o+ow}{::} \PYG{k+kt}{Float} \PYG{o+ow}{\PYGZhy{}\PYGZgt{}} \PYG{k+kt}{Integer}
+\PYG{n+nf}{decimalPlace} \PYG{n}{f} \PYG{o+ow}{=} \PYG{n}{truncate} \PYG{p}{(}\PYG{n}{roundFive} \PYG{n}{f}\PYG{o}{*}\PYG{l+m+mi}{10}\PYG{o}{\PYGZca{}}\PYG{l+m+mi}{5}\PYG{p}{)}
+
+\PYG{n+nf}{toRatio} \PYG{o+ow}{::} \PYG{k+kt}{Float} \PYG{o+ow}{\PYGZhy{}\PYGZgt{}} \PYG{k+kt}{Ratio}
+\PYG{n+nf}{toRatio} \PYG{n}{f} \PYG{o+ow}{=} \PYG{n}{reduceFraction} \PYG{p}{(}\PYG{k+kt}{MkRatio} \PYG{p}{(}\PYG{n}{decimalPlace} \PYG{n}{f}\PYG{p}{)} \PYG{l+m+mi}{100000}\PYG{p}{)}
+
+\end{Verbatim}
