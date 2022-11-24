@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2022.11.23)  23 NOV 2022 17:38
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2022.11.23)  24 NOV 2022 18:55
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -1255,31 +1255,45 @@ LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <9> not available
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <8> not available
 (Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 2.
  [4]) [5]
+\openout5 = `abgaben-minted.pyg'.
+
+ (_minted-abgaben-minted/64428283C6764B2CCC271C1E29D2797A93791E5D21DE665EECEAFFA390BAEB05.pygtex
+LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10> not available
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 2.
+)
+\openout5 = `abgaben-minted.pyg'.
+
+ (_minted-abgaben-minted/2256ED1FE2C909D786C2B3E9BA28A01B93791E5D21DE665EECEAFFA390BAEB05.pygtex)
+\openout5 = `abgaben-minted.pyg'.
+
+ (_minted-abgaben-minted/F31E3C16902159F14D7BEF2976028F5A93791E5D21DE665EECEAFFA390BAEB05.pygtex)
 <./images//2022_11_23_3d3b162f8463b52386b8g-3.jpg, id=44, 265.99374pt x 359.3425pt>
 File: ./images//2022_11_23_3d3b162f8463b52386b8g-3.jpg Graphic file (type jpg)
 <use ./images//2022_11_23_3d3b162f8463b52386b8g-3.jpg>
-Package pdftex.def Info: ./images//2022_11_23_3d3b162f8463b52386b8g-3.jpg  used on input line 119.
-(pdftex.def)             Requested size: 284.52756pt x 384.41042pt.
- [6] [7 <./images//2022_11_23_3d3b162f8463b52386b8g-3.jpg>] (abgaben-minted.aux)
+Package pdftex.def Info: ./images//2022_11_23_3d3b162f8463b52386b8g-3.jpg  used on input line 120.
+(pdftex.def)             Requested size: 85.35826pt x 115.30997pt.
+ (_minted-abgaben-minted/0F3B71FF28D5FA0A5DECB35A9CAFA64293791E5D21DE665EECEAFFA390BAEB05.pygtex [6 <./images//2022_11_23_3d3b162f8463b52386b8g-3.jpg>]) [7] (abgaben-minted.aux)
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 0.5pt have occurred.
 
 Package rerunfilecheck Info: File `abgaben-minted.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
+runsystem(del abgaben-minted.pyg)...executed.
+
  ) 
 Here is how much of TeX's memory you used:
- 38301 strings out of 475385
- 759722 string characters out of 2776906
+ 38306 strings out of 475385
+ 762190 string characters out of 2776906
  1323293 words of memory out of 3000000
- 58895 multiletter control sequences out of 15000+600000
- 509904 words of font info for 179 fonts, out of 8000000 for 9000
+ 58902 multiletter control sequences out of 15000+600000
+ 509715 words of font info for 173 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 113i,23n,109p,10803b,1160s stack positions out of 10000i,1000n,20000p,200000b,80000s
-<C:/Users/felix/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/NewTXMI.pfb><C:/Users/felix/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/NewTXMI5.pfb><C:/Users/felix/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/NewTXMI7.pfb><C:/Users/felix/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/felix/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmitt10.pfb><C:/Users/felix/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/felix/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/felix/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/felix/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/felix/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt9.pfb><C:/Users/felix/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/txexs.pfb><C:/Users/felix/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/txmiaX.pfb><C:/Users/felix/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/txsys.pfb>
-Output written on abgaben-minted.pdf (7 pages, 162645 bytes).
+ 113i,22n,109p,10803b,1164s stack positions out of 10000i,1000n,20000p,200000b,80000s
+<C:/Users/felix/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/NewTXMI.pfb><C:/Users/felix/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/NewTXMI5.pfb><C:/Users/felix/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/NewTXMI7.pfb><C:/Users/felix/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/felix/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmitt10.pfb><C:/Users/felix/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/felix/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/felix/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/felix/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/felix/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Users/felix/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt9.pfb><C:/Users/felix/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/txexs.pfb><C:/Users/felix/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/txmiaX.pfb><C:/Users/felix/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/txsys.pfb>
+Output written on abgaben-minted.pdf (7 pages, 176076 bytes).
 PDF statistics:
  121 PDF objects out of 1000 (max. 8388607)
- 16 named destinations out of 1000 (max. 500000)
- 38938 words of extra memory for PDF output out of 42996 (max. 10000000)
+ 15 named destinations out of 1000 (max. 500000)
+ 39442 words of extra memory for PDF output out of 42996 (max. 10000000)
 

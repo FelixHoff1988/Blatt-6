@@ -103,20 +103,26 @@ Hinweis: Sie können die Haskell-Datei aus dem Learnweb als Startpunkt nutzen.
 
 \textbf{ Aufgabe P6.5:} Rekursive Datentypen $(1+3+1,5+1,5+3=10$ Punkte $)$ 
 
-In der Vorlesung haben Sie den ADT Binärbaum Btree kennengelernt. Sie sollen nun einen konkrete Datentypen BtreeFloat implementieren, der nur Elemente vom Typ Float abspeichert. Folgen Sie dabei dem Programmentwurf der Vorlesung und erstellen Sie (1) Funktionsköpfe, (2) Beispiele und (3) Funktionsrümpfe sowie (4) eine Überprüfung anhand der generierten Beispiele. Bearbeiten Sie dafür folgende Aufgaben:
+In der Vorlesung haben Sie den ADT Binärbaum \mintinline{Haskell}{Btree} kennengelernt. Sie sollen nun einen konkrete Datentypen \mintinline{Haskell}{BtreeFloat} implementieren, der nur Elemente vom Typ \mintinline{Haskell}{Float} abspeichert. Folgen Sie dabei dem Programmentwurf der Vorlesung und erstellen Sie (1) Funktionsköpfe, (2) Beispiele und (3) Funktionsrümpfe sowie (4) eine Überprüfung anhand der generierten Beispiele. Bearbeiten Sie dafür folgende Aufgaben:
+\begin{itemize}
+\item[(a)] Implementieren Sie nun den Binärbaum BtreeFloat. Ein Binärbaum ist entweder ein leerer Knoten Nil oder ein Knoten Node mit einer Gleitkommazahl (Float) als Wert und einem linken Kind (einem Binärbaum) und einem rechten Kind (einem Binärbaum).
 
-(a) Implementieren Sie nun den Binärbaum BtreeFloat. Ein Binärbaum ist entweder ein leerer Knoten Nil oder ein Knoten Node mit einer Gleitkommazahl (Float) als Wert und einem linken Kind (einem Binärbaum) und einem rechten Kind (einem Binärbaum).
+\item[(b)] Implementieren Sie die Funktion insert :: BtreeFloat $\rightarrow$ Float $\rightarrow$ BtreeFloat für den Datentyp BtreeFloat. Diese Funktion fügt eine Gleitkommazahl in den Binärbaum ein. Für jeden Knoten wird der Wert $s$ mit dem Wert des aktuellen Knoten $s_{i}$ verglichen. Ist $s<s_{i}$ dann wird der Wert in den linken Binärbaum eingefügt, ist $s>s_{i}$ dann wird der Wert in den rechten Binärbaum eingefügt. Sind beide Werte gleich wird der Wert nicht eingefügt. Der Wert $s$ wird soweit nach unten durchgereicht bis ein Blatt erreicht wird. Dort wird dann ein neuer Knoten mit dem Wert $s$ und zwei leeren Kindern (Binärbäumen) eingefügt.
 
-(b) Implementieren Sie die Funktion insert :: BtreeFloat $\rightarrow$ Float $\rightarrow$ BtreeFloat für den Datentyp BtreeFloat. Diese Funktion fügt eine Gleitkommazahl in den Binärbaum ein. Für jeden Knoten wird der Wert $s$ mit dem Wert des aktuellen Knoten $s_{i}$ verglichen. Ist $s<s_{i}$ dann wird der Wert in den linken Binärbaum eingefügt, ist $s>s_{i}$ dann wird der Wert in den rechten Binärbaum eingefügt. Sind beide Werte gleich wird der Wert nicht eingefügt. Der Wert $s$ wird soweit nach unten durchgereicht bis ein Blatt erreicht wird. Dort wird dann ein neuer Knoten mit dem Wert $s$ und zwei leeren Kindern (Binärbäumen) eingefügt.
+\item[(c)] Implementieren Sie die Funktion depth : : BtreeFloat $\rightarrow$ Int für den Datentypen BtreeFloat. Diese Funktion gibt die Tiefe eines Binärbaumes an. Dabei ist die Tiefe beschrieben durch den maximal längsten Pfad von der Wurzel bis zu einem Blatt.
 
-(c) Implementieren Sie die Funktion depth : : BtreeFloat $\rightarrow$ Int für den Datentypen BtreeFloat. Diese Funktion gibt die Tiefe eines Binärbaumes an. Dabei ist die Tiefe beschrieben durch den maximal längsten Pfad von der Wurzel bis zu einem Blatt.
+\item[(d)] Implementieren Sie die Funktion max\_node : : BtreeFloat $\rightarrow$ Float für den Datentypen BtreeFloat. Diese Funktion gibt den größten Knotenwert innerhalb des Binärbaumes zurück. Sollte die Eingabe nur ein leerer Knoten sein, dann soll max\_node den Wert 0 zurückgeben. Hinweis: Sie können davon ausgehen, dass der Binärbaum mit der Funktion insert erstellt wurde.
 
-(d) Implementieren Sie die Funktion max\_node : : BtreeFloat $\rightarrow$ Float für den Datentypen BtreeFloat. Diese Funktion gibt den größten Knotenwert innerhalb des Binärbaumes zurück. Sollte die Eingabe nur ein leerer Knoten sein, dann soll max\_node den Wert 0 zurückgeben. Hinweis: Sie können davon ausgehen, dass der Binärbaum mit der Funktion insert erstellt wurde.
+\item[(e)] Implementieren Sie die Funktion path\_diff :: BtreeFloat $\rightarrow$ Int für den Datentypen BtreeFloat. Diese Funktion gibt die Differenz zwischen dem kürzesten und dem längsten Pfad im Binärbaum zurück. Ein Pfad sei dabei die Anzahl der Knoten vom Wurzelknoten (dem Startknoten) zu einem Blattknoten.
+\end{itemize}
+\textbf{Beispiel:}
 
-(e) Implementieren Sie die Funktion path\_diff :: BtreeFloat $\rightarrow$ Int für den Datentypen BtreeFloat. Diese Funktion gibt die Differenz zwischen dem kürzesten und dem längsten Pfad im Binärbaum zurück. Ein Pfad sei dabei die Anzahl der Knoten vom Wurzelknoten (dem Startknoten) zu einem Blattknoten.
-
-\section{Beispiel:}
-\includegraphics[width=10cm]{2022_11_23_3d3b162f8463b52386b8g-3}
+\includegraphics[width=3cm]{2022_11_23_3d3b162f8463b52386b8g-3}
 
 In dem Beispiel oben hat der angegebene Binärbaum den kürzesten Pfad der Länge 2 und der längste Pfad sei dabei 5. In diesem Fall würde die Funktion 3 zurückgeben.
+
+\begin{itemize}
+  \item []\inputminted{Haskell}{A6_5.hs}
+\end{itemize}
+
 \end{document}
