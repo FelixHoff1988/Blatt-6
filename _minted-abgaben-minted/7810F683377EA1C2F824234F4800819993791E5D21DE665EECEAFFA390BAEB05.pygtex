@@ -1,0 +1,35 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZhy{}\PYGZhy{}Vorlesungsbeispiel für den ADT A}
+\PYG{c+c1}{\PYGZhy{}\PYGZhy{}Signatur:}
+\PYG{k+kr}{class} \PYG{k+kt}{ADT} \PYG{n}{a} \PYG{k+kr}{where}
+    \PYG{n}{a}\PYG{p}{,} \PYG{n}{b} \PYG{o+ow}{::} \PYG{n}{a}
+    \PYG{n}{op1}   \PYG{o+ow}{::} \PYG{n}{a} \PYG{o+ow}{\PYGZhy{}\PYGZgt{}} \PYG{n}{a}
+    \PYG{n}{op2}\PYG{p}{,} \PYG{n}{op3}  \PYG{o+ow}{::} \PYG{n}{a} \PYG{o+ow}{\PYGZhy{}\PYGZgt{}} \PYG{n}{a} \PYG{o+ow}{\PYGZhy{}\PYGZgt{}} \PYG{n}{a}
+\PYG{c+c1}{\PYGZhy{}\PYGZhy{}Semantik}
+    \PYG{n}{op1} \PYG{n}{a} \PYG{o+ow}{=} \PYG{n}{b}
+    \PYG{n}{op2} \PYG{n}{a} \PYG{n}{x} \PYG{o+ow}{=} \PYG{n}{x}
+    \PYG{n}{op3} \PYG{n}{b} \PYG{n}{x} \PYG{o+ow}{=} \PYG{n}{x}
+
+\PYG{c+c1}{\PYGZhy{}\PYGZhy{}Beispiel 1: ADT Color}
+\PYG{c+c1}{\PYGZhy{}\PYGZhy{}Signatur:}
+\PYG{k+kr}{class} \PYG{k+kt}{Color} \PYG{n}{c} \PYG{k+kr}{where}
+    \PYG{n}{red}\PYG{p}{,} \PYG{n}{green}\PYG{p}{,} \PYG{n}{blue}\PYG{p}{,} \PYG{n}{yellow}    \PYG{o+ow}{::} \PYG{n}{c}
+    \PYG{n}{kompleColor}                 \PYG{o+ow}{::} \PYG{n}{c} \PYG{o+ow}{\PYGZhy{}\PYGZgt{}} \PYG{n}{c}
+    \PYG{n}{mixColor}                    \PYG{o+ow}{::} \PYG{n}{c} \PYG{o+ow}{\PYGZhy{}\PYGZgt{}} \PYG{k+kt}{Float} \PYG{o+ow}{\PYGZhy{}\PYGZgt{}} \PYG{n}{c}
+    \PYG{n}{lightenColor}                \PYG{o+ow}{::} \PYG{n}{c} \PYG{o+ow}{\PYGZhy{}\PYGZgt{}} \PYG{n}{c} \PYG{o+ow}{\PYGZhy{}\PYGZgt{}} \PYG{n}{c}
+\PYG{c+c1}{\PYGZhy{}\PYGZhy{}Semantik}
+    \PYG{n}{kompleColor} \PYG{n}{red} \PYG{o+ow}{=} \PYG{n}{green}
+    \PYG{n}{mixColor} \PYG{n}{blue} \PYG{n}{yelllow} \PYG{o+ow}{=} \PYG{n}{green}
+    \PYG{n}{lightenColor} \PYG{n}{c} \PYG{n}{f} \PYG{o+ow}{=} \PYG{n}{c}
+
+\PYG{c+c1}{\PYGZhy{}\PYGZhy{}Beispiel 2: ADT Fish}
+\PYG{c+c1}{\PYGZhy{}\PYGZhy{}Signatur:}
+\PYG{k+kr}{class} \PYG{k+kt}{Fish} \PYG{n}{f} \PYG{k+kr}{where}
+    \PYG{n}{shark}\PYG{p}{,} \PYG{n}{trout} \PYG{o+ow}{::} \PYG{n}{f}
+    \PYG{n}{saltwaterFish}   \PYG{o+ow}{::} \PYG{n}{f} \PYG{o+ow}{\PYGZhy{}\PYGZgt{}} \PYG{k+kt}{Bool}
+    \PYG{n}{isLarger}\PYG{p}{,} \PYG{n}{isStronger}  \PYG{o+ow}{::} \PYG{n}{f} \PYG{o+ow}{\PYGZhy{}\PYGZgt{}} \PYG{n}{f} \PYG{o+ow}{\PYGZhy{}\PYGZgt{}} \PYG{n}{f}
+\PYG{c+c1}{\PYGZhy{}\PYGZhy{}Semantik}
+    \PYG{n}{saltwaterFish} \PYG{n}{f} \PYG{o+ow}{=} \PYG{k+kt}{True}
+    \PYG{n}{isLarger} \PYG{n}{f} \PYG{n}{g} \PYG{o+ow}{=} \PYG{n}{f}
+    \PYG{n}{isStronger} \PYG{n}{f} \PYG{n}{g} \PYG{o+ow}{=} \PYG{n}{g}
+\end{Verbatim}
