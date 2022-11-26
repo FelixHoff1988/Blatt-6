@@ -2,18 +2,15 @@
 
 \PYG{c+cm}{\PYGZob{}\PYGZhy{}\PYGZsh{} OPTIONS\PYGZus{}GHC \PYGZhy{}Wno\PYGZhy{}unrecognised\PYGZhy{}pragmas \PYGZsh{}\PYGZhy{}\PYGZcb{}}
 \PYG{c+cm}{\PYGZob{}\PYGZhy{}\PYGZsh{} HLINT ignore \PYGZdq{}Use camelCase\PYGZdq{} \PYGZsh{}\PYGZhy{}\PYGZcb{}}
-\PYG{c+c1}{\PYGZhy{}\PYGZhy{}Datentyp Btreefloat der nur Elemente vom Typ Float abspeichert}
 \PYG{k+kr}{data} \PYG{k+kt}{BtreeFloat} \PYG{o+ow}{=} \PYG{k+kt}{Nil} \PYG{o}{|} \PYG{k+kt}{Node} \PYG{k+kt}{Float} \PYG{k+kt}{BtreeFloat} \PYG{k+kt}{BtreeFloat}
   \PYG{k+kr}{deriving} \PYG{p}{(}\PYG{k+kt}{Eq}\PYG{p}{,} \PYG{k+kt}{Show}\PYG{p}{,} \PYG{k+kt}{Ord}\PYG{p}{)}
 
-\PYG{c+c1}{\PYGZhy{}\PYGZhy{}Funktion die eine Gleitkommazahl in den Binärbaum einfügt. Fur jeden Knoten wird der Wert s mit dem Wert des aktuellen Knoten si verglichen. Ist s \PYGZlt{} si dann wird der Wert in den linken Binärbaum eingefügt, ist s \PYGZgt{} si dann wird der Wert in den rechten Binärbaum eingefügt. Sind beide Werte gleich wird der Wert nicht eingefügt. Der Wert s wird soweit nach unten durchgereicht bis ein Blatt erreicht wird. Dort wird dann ein neuer Knoten mit dem Wert s und zwei leeren Kindern (Binärbäumen) eingefugt}
 \PYG{n+nf}{insert} \PYG{o+ow}{::} \PYG{k+kt}{BtreeFloat} \PYG{o+ow}{\PYGZhy{}\PYGZgt{}} \PYG{k+kt}{Float} \PYG{o+ow}{\PYGZhy{}\PYGZgt{}} \PYG{k+kt}{BtreeFloat}
 \PYG{n+nf}{insert} \PYG{k+kt}{Nil} \PYG{n}{flt} \PYG{o+ow}{=} \PYG{k+kt}{Node} \PYG{n}{flt} \PYG{k+kt}{Nil} \PYG{k+kt}{Nil}
 \PYG{n+nf}{insert} \PYG{p}{(}\PYG{k+kt}{Node} \PYG{n}{val} \PYG{n}{left} \PYG{n}{right}\PYG{p}{)} \PYG{n}{flt}
   \PYG{o}{|}\PYG{n}{flt} \PYG{o}{\PYGZlt{}} \PYG{n}{val} \PYG{o+ow}{=} \PYG{k+kt}{Node} \PYG{n}{val} \PYG{p}{(}\PYG{n}{insert} \PYG{n}{left} \PYG{n}{flt}\PYG{p}{)}  \PYG{n}{right}
   \PYG{o}{|}\PYG{n}{otherwise} \PYG{o+ow}{=} \PYG{k+kt}{Node} \PYG{n}{val} \PYG{n}{left} \PYG{p}{(}\PYG{n}{insert} \PYG{n}{right} \PYG{n}{flt}\PYG{p}{)}
 
-\PYG{c+c1}{\PYGZhy{}\PYGZhy{}Funktion die die Tiefe eines Binärbaumes angibt. Dabei ist die Tiefe beschrieben durch den maximal längsten Pfad von der Wurzel bis zu einem Blatt}
 \PYG{n+nf}{depth} \PYG{o+ow}{::} \PYG{k+kt}{BtreeFloat} \PYG{o+ow}{\PYGZhy{}\PYGZgt{}} \PYG{k+kt}{Int}
 \PYG{n+nf}{depth} \PYG{k+kt}{Nil} \PYG{o+ow}{=} \PYG{l+m+mi}{0}
 \PYG{n+nf}{depth} \PYG{p}{(}\PYG{k+kt}{Node} \PYG{n}{val} \PYG{n}{left} \PYG{n}{right}\PYG{p}{)}
@@ -22,18 +19,15 @@
   \PYG{o}{|}\PYG{n}{depth} \PYG{n}{left} \PYG{o}{==} \PYG{n}{depth} \PYG{n}{right} \PYG{o+ow}{=} \PYG{l+m+mi}{1} \PYG{o}{+} \PYG{n}{depth} \PYG{n}{right}
   \PYG{o}{|}\PYG{n}{otherwise} \PYG{o+ow}{=} \PYG{l+m+mi}{1} \PYG{o}{+} \PYG{n}{depth} \PYG{n}{right}
 
-\PYG{c+c1}{\PYGZhy{}\PYGZhy{}Funktion die den größten Knotenwert innerhalb des Binärbaumes zurückgibt. Sollte die Eingabe nur ein leerer Knoten sein, dann soll max\PYGZus{}node den Wert 0 zuruckgeben}
 \PYG{n+nf}{max\PYGZus{}node} \PYG{o+ow}{::} \PYG{k+kt}{BtreeFloat} \PYG{o+ow}{\PYGZhy{}\PYGZgt{}} \PYG{k+kt}{Float}
 \PYG{n+nf}{max\PYGZus{}node} \PYG{k+kt}{Nil} \PYG{o+ow}{=} \PYG{l+m+mi}{0}
 \PYG{n+nf}{max\PYGZus{}node} \PYG{p}{(}\PYG{k+kt}{Node} \PYG{n}{val} \PYG{k+kt}{Nil} \PYG{k+kt}{Nil}\PYG{p}{)} \PYG{o+ow}{=} \PYG{n}{val}
 \PYG{n+nf}{max\PYGZus{}node} \PYG{p}{(}\PYG{k+kt}{Node}  \PYG{n}{val}  \PYG{n}{left} \PYG{n}{right}\PYG{p}{)} \PYG{o+ow}{=} \PYG{n}{max\PYGZus{}node} \PYG{n}{right}
 
-\PYG{c+c1}{\PYGZhy{}\PYGZhy{}Funktion die die Differenz zwischen dem kürzesten und dem längsten Pfad im Binärbaum zurückgibt. Ein Pfad sei dabei die Anzahl der Knoten vom Wurzelknoten (dem Startknoten) zu einem Blattknoten}
 \PYG{n+nf}{path\PYGZus{}diff} \PYG{o+ow}{::} \PYG{k+kt}{BtreeFloat} \PYG{o+ow}{\PYGZhy{}\PYGZgt{}} \PYG{k+kt}{Int}
 \PYG{n+nf}{path\PYGZus{}diff} \PYG{k+kt}{Nil} \PYG{o+ow}{=} \PYG{n}{depth} \PYG{k+kt}{Nil} \PYG{o}{\PYGZhy{}} \PYG{n}{shortest\PYGZus{}path} \PYG{k+kt}{Nil}
 \PYG{n+nf}{path\PYGZus{}diff} \PYG{p}{(}\PYG{k+kt}{Node} \PYG{n}{left} \PYG{n}{val} \PYG{n}{right}\PYG{p}{)} \PYG{o+ow}{=} \PYG{n}{depth} \PYG{p}{(}\PYG{k+kt}{Node} \PYG{n}{left} \PYG{n}{val} \PYG{n}{right}\PYG{p}{)} \PYG{o}{\PYGZhy{}} \PYG{n}{shortest\PYGZus{}path} \PYG{p}{(}\PYG{k+kt}{Node} \PYG{n}{left} \PYG{n}{val} \PYG{n}{right}\PYG{p}{)}
 
-\PYG{c+c1}{\PYGZhy{}\PYGZhy{}Hilfsfunktion die die minimale Tiefe eines Binärbaumes angibt. Dabei ist die minimale Tiefe beschrieben durch den maximal kürzesten Pfad von der Wurzel bis zu einem Blatt}
 \PYG{n+nf}{shortest\PYGZus{}path} \PYG{o+ow}{::} \PYG{k+kt}{BtreeFloat} \PYG{o+ow}{\PYGZhy{}\PYGZgt{}} \PYG{k+kt}{Int}
 \PYG{n+nf}{shortest\PYGZus{}path} \PYG{k+kt}{Nil} \PYG{o+ow}{=} \PYG{l+m+mi}{1}
 \PYG{n+nf}{shortest\PYGZus{}path} \PYG{p}{(}\PYG{k+kt}{Node} \PYG{n}{val} \PYG{n}{left} \PYG{n}{right}\PYG{p}{)}
@@ -42,7 +36,6 @@
   \PYG{o}{|}\PYG{n}{shortest\PYGZus{}path} \PYG{n}{left} \PYG{o}{==} \PYG{n}{shortest\PYGZus{}path} \PYG{n}{right} \PYG{o+ow}{=} \PYG{l+m+mi}{1} \PYG{o}{+} \PYG{n}{shortest\PYGZus{}path} \PYG{n}{left}
   \PYG{o}{|}\PYG{n}{otherwise} \PYG{o+ow}{=} \PYG{l+m+mi}{1} \PYG{o}{+} \PYG{n}{shortest\PYGZus{}path} \PYG{n}{left}
 
-\PYG{c+c1}{\PYGZhy{}\PYGZhy{}tree aus dem Beispiel}
 \PYG{n+nf}{tree} \PYG{o+ow}{::} \PYG{k+kt}{BtreeFloat}
 \PYG{n+nf}{tree} \PYG{o+ow}{=} \PYG{k+kt}{Node} \PYG{l+m+mi}{1} \PYG{p}{(}\PYG{k+kt}{Node} \PYG{l+m+mi}{2} \PYG{p}{(}\PYG{k+kt}{Node} \PYG{l+m+mi}{3} \PYG{p}{(}\PYG{k+kt}{Node} \PYG{l+m+mi}{4} \PYG{k+kt}{Nil} \PYG{k+kt}{Nil}\PYG{p}{)} \PYG{p}{(}\PYG{k+kt}{Node} \PYG{l+m+mi}{5} \PYG{p}{(}\PYG{k+kt}{Node} \PYG{l+m+mi}{6} \PYG{k+kt}{Nil} \PYG{k+kt}{Nil}\PYG{p}{)} \PYG{k+kt}{Nil}\PYG{p}{))} \PYG{k+kt}{Nil}\PYG{p}{)} \PYG{p}{(}\PYG{k+kt}{Node} \PYG{l+m+mi}{7} \PYG{k+kt}{Nil} \PYG{k+kt}{Nil}\PYG{p}{)}
 \end{Verbatim}
