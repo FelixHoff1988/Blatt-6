@@ -24,7 +24,7 @@
 
 \PYG{c+c1}{\PYGZhy{}\PYGZhy{}Funktion die den größten Knotenwert innerhalb des Binärbaumes zurückgibt. Sollte die Eingabe nur ein leerer Knoten sein, dann soll max\PYGZus{}node den Wert 0 zuruckgeben}
 \PYG{n+nf}{max\PYGZus{}node} \PYG{o+ow}{::} \PYG{k+kt}{BtreeFloat} \PYG{o+ow}{\PYGZhy{}\PYGZgt{}} \PYG{k+kt}{Float}
-\PYG{n+nf}{max\PYGZus{}node} \PYG{k+kt}{Nil} \PYG{o+ow}{=} \PYG{l+m+mi}{1}
+\PYG{n+nf}{max\PYGZus{}node} \PYG{k+kt}{Nil} \PYG{o+ow}{=} \PYG{l+m+mi}{0}
 \PYG{n+nf}{max\PYGZus{}node} \PYG{p}{(}\PYG{k+kt}{Node} \PYG{n}{val} \PYG{k+kt}{Nil} \PYG{k+kt}{Nil}\PYG{p}{)} \PYG{o+ow}{=} \PYG{n}{val}
 \PYG{n+nf}{max\PYGZus{}node} \PYG{p}{(}\PYG{k+kt}{Node}  \PYG{n}{val}  \PYG{n}{left} \PYG{n}{right}\PYG{p}{)} \PYG{o+ow}{=} \PYG{n}{max\PYGZus{}node} \PYG{n}{right}
 

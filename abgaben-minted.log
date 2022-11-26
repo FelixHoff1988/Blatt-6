@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2022.11.23)  25 NOV 2022 18:58
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2022.11.23)  26 NOV 2022 11:13
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -1237,7 +1237,7 @@ Package scrlayer-scrpage Warning: \headheight to low.
 (scrlayer-scrpage)                processing, but you should do this yourself,
 (scrlayer-scrpage)                e.g., setting geometry's option
 (scrlayer-scrpage)                `head=123.56027pt'.
-(scrlayer-scrpage)                I'll also decrease \topmargin on input line 55.
+(scrlayer-scrpage)                I'll also decrease \topmargin on input line 79.
 
 
 Overfull \vbox (108.56027pt too high) has occurred while \output is active []
@@ -1251,28 +1251,88 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <9> not available
 (Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 4.
-) [2] (_minted-abgaben-minted/244268B98A5C9CC8E9025B697C2144D993791E5D21DE665EECEAFFA390BAEB05.pygtex) [3] (_minted-abgaben-minted/9CCA4DDEC3B21483C68AF9A9A95047EB93791E5D21DE665EECEAFFA390BAEB05.pygtex
+) [2]
+\openout5 = `abgaben-minted.pyg'.
+
+ (_minted-abgaben-minted/8F8058AF095AB27D69C468E6299C13D393791E5D21DE665EECEAFFA390BAEB05.pygtex
+LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10> not available
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 2.
+)
+\openout5 = `abgaben-minted.pyg'.
+
+ (_minted-abgaben-minted/E3620D47E5B7B4C8F00A5B68D1DCE0AB93791E5D21DE665EECEAFFA390BAEB05.pygtex) (_minted-abgaben-minted/244268B98A5C9CC8E9025B697C2144D993791E5D21DE665EECEAFFA390BAEB05.pygtex) [3]
+\openout5 = `abgaben-minted.pyg'.
+
+ (_minted-abgaben-minted/3802BA2174EF607349B74CE6BC11649C93791E5D21DE665EECEAFFA390BAEB05.pygtex)
+\openout5 = `abgaben-minted.pyg'.
+
+ (_minted-abgaben-minted/5DC381BE8EF80F8B8B25A34CEBDB6D7293791E5D21DE665EECEAFFA390BAEB05.pygtex)
+\openout5 = `abgaben-minted.pyg'.
+
+ (_minted-abgaben-minted/DB2F3D823EF6628EE19419DFA40F979793791E5D21DE665EECEAFFA390BAEB05.pygtex)
+\openout5 = `abgaben-minted.pyg'.
+
+ (_minted-abgaben-minted/886A29DBF649B4659548BF711C90B4DD93791E5D21DE665EECEAFFA390BAEB05.pygtex)
+\openout5 = `abgaben-minted.pyg'.
+
+ (_minted-abgaben-minted/C19ACA010F32F0B888D5C0B65A7635FA93791E5D21DE665EECEAFFA390BAEB05.pygtex) (_minted-abgaben-minted/9CCA4DDEC3B21483C68AF9A9A95047EB93791E5D21DE665EECEAFFA390BAEB05.pygtex
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <8> not available
 (Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 2.
  [4]) [5]
 \openout5 = `abgaben-minted.pyg'.
 
- (_minted-abgaben-minted/64428283C6764B2CCC271C1E29D2797A93791E5D21DE665EECEAFFA390BAEB05.pygtex
-LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 2.
-)
+ (_minted-abgaben-minted/64428283C6764B2CCC271C1E29D2797A93791E5D21DE665EECEAFFA390BAEB05.pygtex)
 \openout5 = `abgaben-minted.pyg'.
 
  (_minted-abgaben-minted/2256ED1FE2C909D786C2B3E9BA28A01B93791E5D21DE665EECEAFFA390BAEB05.pygtex)
 \openout5 = `abgaben-minted.pyg'.
 
  (_minted-abgaben-minted/F31E3C16902159F14D7BEF2976028F5A93791E5D21DE665EECEAFFA390BAEB05.pygtex)
-<./images//2022_11_23_3d3b162f8463b52386b8g-3.jpg, id=44, 265.99374pt x 359.3425pt>
+\openout5 = `abgaben-minted.pyg'.
+
+ (_minted-abgaben-minted/2256ED1FE2C909D786C2B3E9BA28A01B93791E5D21DE665EECEAFFA390BAEB05.pygtex)
+\openout5 = `abgaben-minted.pyg'.
+
+ (_minted-abgaben-minted/E3F9FA872AC95504F5CBDC0FC211976C93791E5D21DE665EECEAFFA390BAEB05.pygtex)
+\openout5 = `abgaben-minted.pyg'.
+
+ (_minted-abgaben-minted/A23EB7E851C75169666F9BCC4539E4C393791E5D21DE665EECEAFFA390BAEB05.pygtex)
+\openout5 = `abgaben-minted.pyg'.
+
+ (_minted-abgaben-minted/F31E3C16902159F14D7BEF2976028F5A93791E5D21DE665EECEAFFA390BAEB05.pygtex)
+\openout5 = `abgaben-minted.pyg'.
+
+ (_minted-abgaben-minted/421DF254824DD1EA3FFDDB7990A9B9C793791E5D21DE665EECEAFFA390BAEB05.pygtex)
+\openout5 = `abgaben-minted.pyg'.
+
+ (_minted-abgaben-minted/2256ED1FE2C909D786C2B3E9BA28A01B93791E5D21DE665EECEAFFA390BAEB05.pygtex)
+\openout5 = `abgaben-minted.pyg'.
+
+ (_minted-abgaben-minted/A83BD50BD43D296A2B2807234C6851BA93791E5D21DE665EECEAFFA390BAEB05.pygtex)
+\openout5 = `abgaben-minted.pyg'.
+
+ (_minted-abgaben-minted/2256ED1FE2C909D786C2B3E9BA28A01B93791E5D21DE665EECEAFFA390BAEB05.pygtex)
+\openout5 = `abgaben-minted.pyg'.
+
+ (_minted-abgaben-minted/6B1EC95FE2162492772D2EE39C495E6C93791E5D21DE665EECEAFFA390BAEB05.pygtex)
+\openout5 = `abgaben-minted.pyg'.
+
+ (_minted-abgaben-minted/2256ED1FE2C909D786C2B3E9BA28A01B93791E5D21DE665EECEAFFA390BAEB05.pygtex)
+\openout5 = `abgaben-minted.pyg'.
+
+ (_minted-abgaben-minted/2BFADB42BFE973797BAC47F3CE731E1693791E5D21DE665EECEAFFA390BAEB05.pygtex)
+\openout5 = `abgaben-minted.pyg'.
+
+ (_minted-abgaben-minted/4BEBB95D0C0609656D3EB2D62C08993593791E5D21DE665EECEAFFA390BAEB05.pygtex)
+\openout5 = `abgaben-minted.pyg'.
+
+ (_minted-abgaben-minted/59437F2BA367F5093230165B35FF36F093791E5D21DE665EECEAFFA390BAEB05.pygtex)
+<./images//2022_11_23_3d3b162f8463b52386b8g-3.jpg, id=47, 265.99374pt x 359.3425pt>
 File: ./images//2022_11_23_3d3b162f8463b52386b8g-3.jpg Graphic file (type jpg)
 <use ./images//2022_11_23_3d3b162f8463b52386b8g-3.jpg>
-Package pdftex.def Info: ./images//2022_11_23_3d3b162f8463b52386b8g-3.jpg  used on input line 124.
+Package pdftex.def Info: ./images//2022_11_23_3d3b162f8463b52386b8g-3.jpg  used on input line 199.
 (pdftex.def)             Requested size: 85.35826pt x 115.30997pt.
- (_minted-abgaben-minted/5F459A376AF7BBBD4F7D737795477C8C93791E5D21DE665EECEAFFA390BAEB05.pygtex [6 <./images//2022_11_23_3d3b162f8463b52386b8g-3.jpg>] [7]) [8] (abgaben-minted.aux)
+ (_minted-abgaben-minted/B687EC6ACBFD7E23A7124FD9ABE0DFBA93791E5D21DE665EECEAFFA390BAEB05.pygtex [6 <./images//2022_11_23_3d3b162f8463b52386b8g-3.jpg>] [7]) [8] (abgaben-minted.aux)
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 0.5pt have occurred.
@@ -1283,17 +1343,17 @@ runsystem(del abgaben-minted.pyg)...executed.
 
  ) 
 Here is how much of TeX's memory you used:
- 38314 strings out of 475385
- 762879 string characters out of 2776906
+ 38434 strings out of 475385
+ 774790 string characters out of 2776906
  1323293 words of memory out of 3000000
- 58905 multiletter control sequences out of 15000+600000
- 509715 words of font info for 173 fonts, out of 8000000 for 9000
+ 58953 multiletter control sequences out of 15000+600000
+ 510808 words of font info for 183 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  113i,22n,109p,10803b,1164s stack positions out of 10000i,1000n,20000p,200000b,80000s
-<C:/Users/felix/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/NewTXMI.pfb><C:/Users/felix/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/NewTXMI5.pfb><C:/Users/felix/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/NewTXMI7.pfb><C:/Users/felix/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/felix/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmitt10.pfb><C:/Users/felix/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/felix/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/felix/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/felix/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/felix/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Users/felix/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt9.pfb><C:/Users/felix/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/txexs.pfb><C:/Users/felix/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/txmiaX.pfb><C:/Users/felix/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/txsys.pfb>
-Output written on abgaben-minted.pdf (8 pages, 183588 bytes).
+<C:/Users/felix/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/NewTXMI.pfb><C:/Users/felix/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/NewTXMI5.pfb><C:/Users/felix/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/NewTXMI7.pfb><C:/Users/felix/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/felix/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmitt10.pfb><C:/Users/felix/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/felix/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/felix/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/felix/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/felix/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/felix/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Users/felix/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt9.pfb><C:/Users/felix/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/txexs.pfb><C:/Users/felix/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/txmiaX.pfb><C:/Users/felix/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/txsys.pfb>
+Output written on abgaben-minted.pdf (8 pages, 204078 bytes).
 PDF statistics:
- 126 PDF objects out of 1000 (max. 8388607)
+ 131 PDF objects out of 1000 (max. 8388607)
  17 named destinations out of 1000 (max. 500000)
- 39442 words of extra memory for PDF output out of 42996 (max. 10000000)
+ 42002 words of extra memory for PDF output out of 42996 (max. 10000000)
 

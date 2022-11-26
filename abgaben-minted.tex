@@ -47,10 +47,34 @@ f(n)= \begin{cases}2 \cdot f(n-1)+1 & \text { für } n \geq 1 \\ 1 & \text { son
 $$
 
 (a) Geben Sie eine Wertetabelle an, die für $n=0,1,2,3,4,5,6$ das Ergebnis $f(n)$ angibt.
+\begin{center}
+  \begin{tabular}{c|c|c|c|c|c|c|c|}
+    $n$ & 0 & 1 & 2 & 3 & 4 & 5 & 6 \\
+    \hline$f(n)$ & 1 & 1 & 3 & 7 & 15 & 31 & 63
+  \end{tabular}
+\end{center}
+
 
 (b) Geben Sie den schrittweisen Ablauf der rekursiven Funktion als Expansion und Kontraktion für den Wert $n=4$ an.
 
+$$
+\begin{aligned}
+f(4) &=2 \cdot f(4-1)+1 \\
+&=2 \cdot f(3)+1 \\
+&=2 \cdot(2 \cdot f(2)+1)+1 \\
+&=2 \cdot(2 \cdot(2 \cdot f(1)+1)+1)+1\\
+&=2 \cdot(2 \cdot(2 \cdot 1+1)+1)+1 \\
+&=2 \cdot(2 \cdot(3)+1)+1 \\
+&=2 \cdot(\quad 7)+1 \\
+&=15
+\end{aligned}
+$$
+
 (c) In welchem Verhältnis oder mathematischen Zusammenhang stehen $n \geq 0$ und der Funktionswert $f(n)$ ? Geben Sie die Funktion $f(n)$ in einer nicht-rekursiven Form an.
+
+$$
+f(n)=2^n-1
+$$
 
 \newpage
 
@@ -68,7 +92,18 @@ In der Vorlesung haben Sie abstrakte Datentypen (ADT) kennengelernt. Dabei wurde
 
 Zur Ermittlung der Binomialkoeffizienten $\left(\begin{array}{l}n \\ k\end{array}\right)$ kann das Pascalsche Dreieck zu Hilfe gezogen werden. Den passenden Koeffizienten findet man in der $n$-ten Zeile an der $k$-ten Stelle:
 
-$\begin{array}{cccccccccccccccc} & & & & & & & 1 & & & & & & & \\ & & & & & 1 & & 1 & & & & & & \\ & & & & 1 & & 2 & & 1 & & & & & \\ & & & & 1 & & 3 & & 3 & & 1 & & & \\ & & & 1 & & 4 & & 6 & & 4 & & 1 & & \\ & & 1 & & 5 & & 10 & & 10 & & 5 & & 1 & & \\ & 1 & & 6 & & 15 & & 20 & & 15 & & 6 & & 1 & \\ 1 & & 7 & & 21 & & 35 & & 35 & & 21 & & 7 & & 1\end{array}$
+$$
+\begin{array}{cccccccccccccccc} 
+  & & & & & & & 1 & & & & & & & \\ 
+  & & & & & & 1 & & 1 & & & & & \\ 
+  & & & & & 1 & & 2 & & 1 & & & & \\ 
+  & & & & 1 & & 3 & & 3 & & 1 & & & \\ 
+  & & & 1 & & 4 & & 6 & & 4 & & 1 & & \\ 
+  & & 1 & & 5 & & 10 & & 10 & & 5 & & 1 & & 
+  \\ & 1 & & 6 & & 15 & & 20 & & 15 & & 6 & & 1 & 
+  \\ 1 & & 7 & & 21 & & 35 & & 35 & & 21 & & 7 & & 1
+\end{array}
+$$
 
 Dabei kann dies mathematisch durch folgende Funktion $f$ definiert werden:
 
@@ -81,7 +116,7 @@ f(n-1, k-1)+f(n-1, k) & \text { sonst }\end{cases}
 \end{array}
 $$
 
-Implementieren Sie die Funktion pascal::Int $\rightarrow$ Int $\rightarrow$ Int, die die Parameter $n$ und $k$ entgegennimmt und den Binomialkoeffizienten zurückliefert. Implementieren Sie dies als rekursive Funktion. Geben Sie die Berechnung für pascal $(3,1)$ als Kommentar an. Geben Sie außerdem an, ob es sich um eine direkte oder indirekte Rekursion handelt.
+Implementieren Sie die Funktion \mintinline{Haskell}{pascal::Int} $\rightarrow$ Int $\rightarrow$ Int, die die Parameter $n$ und $k$ entgegennimmt und den Binomialkoeffizienten zurückliefert. Implementieren Sie dies als rekursive Funktion. Geben Sie die Berechnung für \mintinline{Haskell}{pascal (3,1)} als Kommentar an. Geben Sie außerdem an, ob es sich um eine direkte oder indirekte Rekursion handelt.
 
 \begin{itemize}
   \item []\inputminted{Haskell}{A6_3.hs}
@@ -91,13 +126,25 @@ Implementieren Sie die Funktion pascal::Int $\rightarrow$ Int $\rightarrow$ Int,
 
 \textbf{Aufgabe P6.4:} Rationale Zahlen $(3+3=6$ Punkte $)$ 
 
-In der Vorlesung haben Sie eine Haskell-Implementierung der rationalen Zahlen kennengelernt. In dieser Aufgaben soll die Implementierung des Datentyps Ratio erweitert werden. Folgen Sie dabei dem Programmentwurf der Vorlesung und erstellen Sie (1) Funktionsköpfe, (2) Beispiele und (3) Funktionsrümpfe sowie (4) eine Überprüfung anhand der generierten Beispiele.
+In der Vorlesung haben Sie eine Haskell-Implementierung der rationalen Zahlen kennengelernt. 
+In dieser Aufgaben soll die Implementierung des Datentyps \mintinline{Haskell}{Ratio} erweitert werden. Folgen Sie 
+dabei dem Programmentwurf der Vorlesung und erstellen Sie (1) Funktionsköpfe, (2) Beispiele 
+und (3) Funktionsrümpfe sowie (4) eine Überprüfung anhand der generierten Beispiele.
 
-(a) Entwickeln Sie eine Funktion reduceFraction, die eine rationale Zahle entgegen nimmt und die vollständig gekürzte rationale Zahl zurück gibt. Implementieren Sie dazu die Hilfsfunktion ggT, die den größten gemeinsamen Teiler zweier Zahlen $a$ und $b$ bestimmt, indem sie $a$ zurück gibt, falls $b=0$. Ansonsten soll der größte gemeinsame Teiler von $b$ und $a \% b$ bestimmt werden.
+(a) Entwickeln Sie eine Funktion \mintinline{Haskell}{reduceFraction}, die eine rationale Zahle 
+entgegen nimmt und die vollständig gekürzte rationale Zahl zurück gibt. Implementieren Sie dazu 
+die Hilfsfunktion \mintinline{Haskell}{ggT}, die den größten gemeinsamen Teiler zweier Zahlen $a$ und $b$ bestimmt, 
+indem sie $a$ zurück gibt, falls $b=0$. Ansonsten soll der größte gemeinsame Teiler von $b$ und 
+$a \% b$ bestimmt werden.
 
-(b) Entwickeln Sie Funktionen fromRatio und toRatio, die eine Konvertierung zwischen dem Datentyp Float und den rationalen Zahlen vornehmen. Die rationale Zahl soll dazu in ihrer vollständig gekürzten Form zurück gegeben werden. Nicht jede rationale Zahl kann als Gleitkommazahl exakt dargestellt werden. Runden Sie die Gleitkommazahlen dazu im Kontext dieser Aufgabe auf 5 Nachkommastellen.
+(b) Entwickeln Sie Funktionen \mintinline{Haskell}{fromRatio} und \mintinline{Haskell}{toRatio}, 
+die eine Konvertierung zwischen dem 
+Datentyp Float und den rationalen Zahlen vornehmen. Die rationale Zahl soll dazu in ihrer 
+vollständig gekürzten Form zurück gegeben werden. Nicht jede rationale Zahl kann als 
+Gleitkommazahl exakt dargestellt werden. Runden Sie die Gleitkommazahlen dazu im Kontext 
+dieser Aufgabe auf 5 Nachkommastellen.
 
-Hinweis: Sie können die Haskell-Datei aus dem Learnweb als Startpunkt nutzen.
+\textit{Hinweis:} Sie können die Haskell-Datei aus dem Learnweb als Startpunkt nutzen.
 
 \begin{itemize}
   \item []\inputminted{Haskell}{A6_4.hs}
@@ -105,25 +152,55 @@ Hinweis: Sie können die Haskell-Datei aus dem Learnweb als Startpunkt nutzen.
 
 \newpage
 
-\textbf{ Aufgabe P6.5:} Rekursive Datentypen $(1+3+1,5+1,5+3=10$ Punkte $)$ 
+\textbf{ Aufgabe P6.5:} Rekursive Datentypen $(1+3+1,5+1,5+3=10$ Punkte$)$ 
 
-In der Vorlesung haben Sie den ADT Binärbaum \mintinline{Haskell}{Btree} kennengelernt. Sie sollen nun einen konkrete Datentypen \mintinline{Haskell}{BtreeFloat} implementieren, der nur Elemente vom Typ \mintinline{Haskell}{Float} abspeichert. Folgen Sie dabei dem Programmentwurf der Vorlesung und erstellen Sie (1) Funktionsköpfe, (2) Beispiele und (3) Funktionsrümpfe sowie (4) eine Überprüfung anhand der generierten Beispiele. Bearbeiten Sie dafür folgende Aufgaben:
+In der Vorlesung haben Sie den ADT Binärbaum \mintinline{Haskell}{Btree} kennengelernt. 
+Sie sollen nun einen konkrete Datentypen \mintinline{Haskell}{BtreeFloat} implementieren, 
+der nur Elemente vom Typ \mintinline{Haskell}{Float} abspeichert. Folgen Sie dabei dem 
+Programmentwurf der Vorlesung und erstellen Sie (1) Funktionsköpfe, (2) Beispiele und 
+(3) Funktionsrümpfe sowie (4) eine Überprüfung anhand der generierten Beispiele. 
+Bearbeiten Sie dafür folgende Aufgaben:
 \begin{itemize}
-\item[(a)] Implementieren Sie nun den Binärbaum BtreeFloat. Ein Binärbaum ist entweder ein leerer Knoten Nil oder ein Knoten Node mit einer Gleitkommazahl (Float) als Wert und einem linken Kind (einem Binärbaum) und einem rechten Kind (einem Binärbaum).
+\item[(a)] Implementieren Sie nun den Binärbaum \mintinline{Haskell}{BtreeFloat}. Ein Binärbaum ist 
+entweder ein leerer Knoten \mintinline{Haskell}{Nil} oder ein Knoten \mintinline{Haskell}{Node} mit einer Gleitkommazahl 
+\mintinline{Haskell}{Float} als Wert und einem linken Kind (einem Binärbaum) und einem rechten Kind 
+(einem Binärbaum).
 
-\item[(b)] Implementieren Sie die Funktion insert :: BtreeFloat $\rightarrow$ Float $\rightarrow$ BtreeFloat für den Datentyp BtreeFloat. Diese Funktion fügt eine Gleitkommazahl in den Binärbaum ein. Für jeden Knoten wird der Wert $s$ mit dem Wert des aktuellen Knoten $s_{i}$ verglichen. Ist $s<s_{i}$ dann wird der Wert in den linken Binärbaum eingefügt, ist $s>s_{i}$ dann wird der Wert in den rechten Binärbaum eingefügt. Sind beide Werte gleich wird der Wert nicht eingefügt. Der Wert $s$ wird soweit nach unten durchgereicht bis ein Blatt erreicht wird. Dort wird dann ein neuer Knoten mit dem Wert $s$ und zwei leeren Kindern (Binärbäumen) eingefügt.
+\item[(b)] Implementieren Sie die Funktion \mintinline{Haskell}{insert :: BtreeFloat -> Float -> BtreeFloat} 
+für den Datentyp \mintinline{Haskell}{BtreeFloat}. Diese Funktion fügt 
+eine Gleitkommazahl in den Binärbaum ein. Für jeden Knoten wird der Wert $s$ mit
+ dem Wert des aktuellen Knoten $s_{i}$ verglichen. Ist $s<s_{i}$ dann wird der Wert 
+ in den linken Binärbaum eingefügt, ist $s>s_{i}$ dann wird der Wert in den rechten 
+ Binärbaum eingefügt. Sind beide Werte gleich wird der Wert nicht eingefügt. 
+ Der Wert $s$ wird soweit nach unten durchgereicht bis ein Blatt erreicht wird. 
+ Dort wird dann ein neuer Knoten mit dem Wert $s$ und zwei leeren Kindern 
+ (Binärbäumen) eingefügt.
 
-\item[(c)] Implementieren Sie die Funktion depth : : BtreeFloat $\rightarrow$ Int für den Datentypen BtreeFloat. Diese Funktion gibt die Tiefe eines Binärbaumes an. Dabei ist die Tiefe beschrieben durch den maximal längsten Pfad von der Wurzel bis zu einem Blatt.
+\item[(c)] Implementieren Sie die Funktion \mintinline{Haskell}{depth : : BtreeFloat-> Int} 
+für den Datentypen \mintinline{Haskell}{BtreeFloat}. Diese Funktion gibt die Tiefe eines Binärbaumes an. 
+Dabei ist die Tiefe beschrieben durch den maximal längsten Pfad von der Wurzel bis 
+zu einem Blatt.
 
-\item[(d)] Implementieren Sie die Funktion max\_node : : BtreeFloat $\rightarrow$ Float für den Datentypen BtreeFloat. Diese Funktion gibt den größten Knotenwert innerhalb des Binärbaumes zurück. Sollte die Eingabe nur ein leerer Knoten sein, dann soll max\_node den Wert 0 zurückgeben. Hinweis: Sie können davon ausgehen, dass der Binärbaum mit der Funktion insert erstellt wurde.
+\item[(d)] Implementieren Sie die Funktion \mintinline{Haskell}{max_node :: BtreeFloat -> Float}
+ für den Datentypen \mintinline{Haskell}{BtreeFloat}. Diese Funktion gibt den größten Knotenwert 
+innerhalb des Binärbaumes zurück. Sollte die Eingabe nur ein leerer Knoten sein, 
+dann soll \mintinline{Haskell}{max_node} den Wert 0 zurückgeben. \textit{Hinweis: Sie können davon ausgehen, 
+dass der Binärbaum mit der Funktion \mintinline{Haskell}{insert erstellt} wurde.}
 
-\item[(e)] Implementieren Sie die Funktion path\_diff :: BtreeFloat $\rightarrow$ Int für den Datentypen BtreeFloat. Diese Funktion gibt die Differenz zwischen dem kürzesten und dem längsten Pfad im Binärbaum zurück. Ein Pfad sei dabei die Anzahl der Knoten vom Wurzelknoten (dem Startknoten) zu einem Blattknoten.
+\item[(e)] Implementieren Sie die Funktion \mintinline{Haskell}{path_diff :: BtreeFloat -> Int}
+für den Datentypen BtreeFloat. Diese Funktion gibt die Differenz zwischen dem 
+kürzesten und dem längsten Pfad im Binärbaum zurück. Ein Pfad sei dabei die Anzahl 
+der Knoten vom Wurzelknoten (dem Startknoten) zu einem Blattknoten.
 \end{itemize}
+
 \textbf{Beispiel:}
 
-\includegraphics[width=3cm]{2022_11_23_3d3b162f8463b52386b8g-3}
+\begin{center}
+  \includegraphics[width=3cm]{2022_11_23_3d3b162f8463b52386b8g-3}
+\end{center}
 
-In dem Beispiel oben hat der angegebene Binärbaum den kürzesten Pfad der Länge 2 und der längste Pfad sei dabei 5. In diesem Fall würde die Funktion 3 zurückgeben.
+In dem Beispiel oben hat der angegebene Binärbaum den kürzesten Pfad der Länge 2 
+und der längste Pfad sei dabei 5. In diesem Fall würde die Funktion 3 zurückgeben.
 
 \begin{itemize}
   \item []\inputminted{Haskell}{A6_5.hs}

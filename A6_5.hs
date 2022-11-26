@@ -23,7 +23,7 @@ depth (Node val left right)
 
 --Funktion die den größten Knotenwert innerhalb des Binärbaumes zurückgibt. Sollte die Eingabe nur ein leerer Knoten sein, dann soll max_node den Wert 0 zuruckgeben
 max_node :: BtreeFloat -> Float
-max_node Nil = 1
+max_node Nil = 0
 max_node (Node val Nil Nil) = val
 max_node (Node  val  left right) = max_node right
 
