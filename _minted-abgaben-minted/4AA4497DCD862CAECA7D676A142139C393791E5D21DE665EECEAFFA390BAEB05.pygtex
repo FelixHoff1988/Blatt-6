@@ -1,4 +1,7 @@
 \begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZhy{}\PYGZhy{} Die Funktion nimmt n über k entgegen und gibt den Binomialkoeffizienten aus.}
+\PYG{c+c1}{\PYGZhy{}\PYGZhy{} Beispiel  für n = 3 und k = 1 gibt 3 aus.}
+\PYG{c+c1}{\PYGZhy{}\PYGZhy{} Diese Funktion ist eine direkte rekursive Funktion da sie (pascal) sich selbst wieder aufruft (pascal).}
 \PYG{n+nf}{pascal} \PYG{o+ow}{::} \PYG{k+kt}{Int} \PYG{o+ow}{\PYGZhy{}\PYGZgt{}} \PYG{k+kt}{Int} \PYG{o+ow}{\PYGZhy{}\PYGZgt{}} \PYG{k+kt}{Int}
 \PYG{n+nf}{pascal} \PYG{n}{n} \PYG{n}{k} 
     \PYG{o}{|} \PYG{n}{k} \PYG{o}{==} \PYG{l+m+mi}{0} \PYG{o+ow}{=} \PYG{l+m+mi}{1}

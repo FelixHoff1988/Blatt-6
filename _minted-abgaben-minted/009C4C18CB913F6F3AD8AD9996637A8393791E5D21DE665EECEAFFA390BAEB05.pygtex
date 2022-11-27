@@ -1,0 +1,37 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kr}{import} \PYG{n+nn}{Distribution.Simple.Flag} \PYG{p}{(}\PYG{k+kt}{Flag}\PYG{p}{)}
+\PYG{c+c1}{\PYGZhy{}\PYGZhy{} Funktion zum Anzeigen von rationalen Zahlen}
+\PYG{c+c1}{\PYGZhy{}\PYGZhy{} Die Notation wird später in der Vorlesung erläutert}
+\PYG{k+kr}{instance} \PYG{k+kt}{Show} \PYG{k+kt}{Ratio} \PYG{k+kr}{where}
+  \PYG{n}{show} \PYG{p}{(}\PYG{k+kt}{MkRatio} \PYG{n}{nom} \PYG{n}{den}\PYG{p}{)} \PYG{o+ow}{=} \PYG{p}{(}\PYG{n}{show} \PYG{n}{nom}\PYG{p}{)} \PYG{o}{++} \PYG{l+s}{\PYGZdq{}/\PYGZdq{}} \PYG{o}{++} \PYG{p}{(}\PYG{n}{show} \PYG{n}{den}\PYG{p}{)}
+\PYG{c+c1}{\PYGZhy{}\PYGZhy{} Eine Hilfsfunktion die den gößten gemeinsamen teiler zweier Zahlen a und b bestimmt indem sie a zurückgibt falls b = 0 ist. Ansonsten soll der größte gemeinsame Teiler von a Modulo b bestimmt werden.}
+\PYG{c+c1}{\PYGZhy{}\PYGZhy{}Beispiel ggT 4 6 sollte 2 ausgeben.}
+\PYG{n+nf}{ggT} \PYG{o+ow}{::} \PYG{k+kt}{Integer} \PYG{o+ow}{\PYGZhy{}\PYGZgt{}} \PYG{k+kt}{Integer} \PYG{o+ow}{\PYGZhy{}\PYGZgt{}} \PYG{k+kt}{Integer}
+\PYG{n+nf}{ggT} \PYG{n}{a} \PYG{n}{b} \PYG{o+ow}{=} \PYG{k+kr}{if} \PYG{n}{b} \PYG{o}{==} \PYG{l+m+mi}{0} \PYG{k+kr}{then} \PYG{n}{a}
+    \PYG{k+kr}{else} \PYG{n}{ggT} \PYG{n}{b} \PYG{p}{(}\PYG{n}{mod} \PYG{n}{a} \PYG{n}{b}\PYG{p}{)}
+\PYG{c+c1}{\PYGZhy{}\PYGZhy{} Funktionen erstellen  Rationale Zahlen}
+\PYG{n+nf}{myRatio} \PYG{o+ow}{::} \PYG{k+kt}{Ratio}
+\PYG{n+nf}{myRatio} \PYG{o+ow}{=} \PYG{k+kt}{MkRatio} \PYG{l+m+mi}{2} \PYG{l+m+mi}{3}
+
+\PYG{n+nf}{myRatio2} \PYG{o+ow}{::} \PYG{k+kt}{Ratio}
+\PYG{n+nf}{myRatio2} \PYG{o+ow}{=} \PYG{k+kt}{MkRatio} \PYG{l+m+mi}{4} \PYG{l+m+mi}{6}
+\PYG{c+c1}{\PYGZhy{}\PYGZhy{} Funktion die eine rationale Zahl vollständig kürzt. }
+\PYG{c+c1}{\PYGZhy{}\PYGZhy{}Beispiel reduceFraction MyRatio2 sollte 2 / 3 ausgeben.}
+\PYG{n+nf}{reduceFraction} \PYG{o+ow}{::} \PYG{k+kt}{Ratio} \PYG{o+ow}{\PYGZhy{}\PYGZgt{}} \PYG{k+kt}{Ratio}
+\PYG{n+nf}{reduceFraction} \PYG{p}{(}\PYG{k+kt}{MkRatio} \PYG{n}{nom} \PYG{n}{den}\PYG{p}{)} \PYG{o+ow}{=} \PYG{k+kt}{MkRatio} \PYG{p}{(}\PYG{n}{div} \PYG{n}{nom} \PYG{p}{(}\PYG{n}{ggT} \PYG{n}{nom} \PYG{n}{den}\PYG{p}{))} \PYG{p}{(}\PYG{n}{div} \PYG{n}{den} \PYG{p}{(}\PYG{n}{ggT} \PYG{n}{nom} \PYG{n}{den}\PYG{p}{))}
+
+\PYG{n+nf}{fromRatio} \PYG{o+ow}{::} \PYG{k+kt}{Ratio} \PYG{o+ow}{\PYGZhy{}\PYGZgt{}} \PYG{k+kt}{Float}
+\PYG{n+nf}{fromRatio} \PYG{p}{(}\PYG{k+kt}{MkRatio} \PYG{n}{nom} \PYG{n}{den}\PYG{p}{)} \PYG{o+ow}{=} \PYG{n}{roundFive} \PYG{p}{(}\PYG{n}{fromIntegral} \PYG{n}{nom} \PYG{o}{/} \PYG{n}{fromIntegral} \PYG{n}{den}\PYG{p}{)}
+\PYG{c+c1}{\PYGZhy{}\PYGZhy{} Funktion die eine Gleitkommazahl auf fünf nachkommastellen rundet}
+\PYG{c+c1}{\PYGZhy{}\PYGZhy{} Beispiel roundFive 2.1234567 gibt 2.12346 aus.}
+\PYG{n+nf}{roundFive} \PYG{o+ow}{::} \PYG{k+kt}{Float} \PYG{o+ow}{\PYGZhy{}\PYGZgt{}} \PYG{k+kt}{Float}
+\PYG{n+nf}{roundFive} \PYG{n}{f} \PYG{o+ow}{=} \PYG{n}{fromIntegral}\PYG{p}{(}\PYG{n}{round} \PYG{p}{(}\PYG{n}{f}\PYG{o}{*}\PYG{l+m+mi}{10}\PYG{o}{\PYGZca{}}\PYG{l+m+mi}{5}\PYG{p}{))}\PYG{o}{/}\PYG{p}{(}\PYG{l+m+mi}{10}\PYG{o}{\PYGZca{}}\PYG{l+m+mi}{5}\PYG{p}{)}
+\PYG{c+c1}{\PYGZhy{}\PYGZhy{} Funktion die eine Gleitkommazahl die auf die fünfte Stelle gerundet wird  in eine Ganzzahl umwandelt, mit der besonderheit das die Zahlen nach dem Komma nun zur ganzen Zahl gehören. }
+\PYG{c+c1}{\PYGZhy{}\PYGZhy{} Beispiel decimalPlace 2.1234567 gibt 212346 aus.}
+\PYG{n+nf}{decimalPlace} \PYG{o+ow}{::} \PYG{k+kt}{Float} \PYG{o+ow}{\PYGZhy{}\PYGZgt{}} \PYG{k+kt}{Integer}
+\PYG{n+nf}{decimalPlace} \PYG{n}{f} \PYG{o+ow}{=} \PYG{n}{truncate} \PYG{p}{(}\PYG{n}{roundFive} \PYG{n}{f}\PYG{o}{*}\PYG{l+m+mi}{10}\PYG{o}{\PYGZca{}}\PYG{l+m+mi}{5}\PYG{p}{)}
+\PYG{c+c1}{\PYGZhy{}\PYGZhy{} Funktion die eine Gleitkommazahl in eine Rationale Zahl umwandelt mit der Besonderheit das die Gleitkommazahl vor der umwandlung auf die 5. nachkommastelle gerundet wird.}
+\PYG{c+c1}{\PYGZhy{}\PYGZhy{} Beispiel toRatio 2.1234567 sollte 106173 / 50000 ausgeben.}
+\PYG{n+nf}{toRatio} \PYG{o+ow}{::} \PYG{k+kt}{Float} \PYG{o+ow}{\PYGZhy{}\PYGZgt{}} \PYG{k+kt}{Ratio}
+\PYG{n+nf}{toRatio} \PYG{n}{f} \PYG{o+ow}{=} \PYG{n}{reduceFraction} \PYG{p}{(}\PYG{k+kt}{MkRatio} \PYG{p}{(}\PYG{n}{decimalPlace} \PYG{n}{f}\PYG{p}{)} \PYG{l+m+mi}{100000}\PYG{p}{)}
+\end{Verbatim}
